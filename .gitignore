@@ -1,0 +1,14 @@
+# Raw data
+data/raw/
+
+# Large processed files (edit if needed)
+*.h5ad
+*.loom
+*.rds
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
