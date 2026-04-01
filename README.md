@@ -1,39 +1,26 @@
 # Computational Immunophenotyping of Biomaterial-Induced Foreign Body Response
+This project presents a computational analysis of immune and stromal cell dynamics following biomaterial implantation, using publicly available single-cell RNA sequencing (scRNA-seq) data.
 
-This repository contains an independent mini-project analyzing immune and stromal responses to biomaterial implantation using publicly available single-cell RNA sequencing (scRNA-seq) data. The project focuses on macrophage and fibroblast transcriptional states and explores candidate immune–stromal communication programs associated with fibrotic remodeling.
-
----
+The study focuses on macrophage functional heterogeneity and fibroblast activation programs, with the goal of identifying transcriptional signatures and candidate immune–stromal interactions associated with fibrotic remodeling.
 
 ## Biological Question
-
-How do implanted biomaterials shape immune cell states—particularly macrophages—and how are these immune programs associated with fibroblast activation and fibrotic remodeling?
-
----
+How does biomaterial implantation reshape immune cell states—particularly macrophages—and how are these immune programs linked to fibroblast activation and fibrosis-associated remodeling?
 
 ## Dataset
-
 - **Source:** Gene Expression Omnibus (GEO)
 - **Accession:** GSE203099
 - **Description:** Single-cell RNA-seq profiles from biomaterial implantation sites capturing immune and stromal cell populations during foreign body response.
-
-Raw data are not included in this repository and can be obtained directly from GEO.
-
----
+  | Raw data are not included in this repository and can be obtained directly from GEO.
 
 ## Analysis Overview
-
-The analysis follows a biologically motivated workflow:
-
-1. Quality control, normalization, and global clustering of all cells
-2. Annotation of major immune and stromal cell types
-3. Subclustering and functional characterization of macrophage states
-4. Identification of fibroblast activation programs associated with extracellular matrix production
-5. Hypothesis-generating analysis of macrophage–fibroblast ligand–receptor interactions
-
----
+The analysis follows a structured workflow:
+- Quality control, normalization, and global clustering
+- Annotation of major immune and stromal cell populations
+- Subclustering and transcriptional characterization of macrophage states
+- Identification of fibroblast activation programs associated with extracellular matrix (ECM) production
+- Exploratory analysis of macrophage–fibroblast ligand–receptor interactions
 
 ## Repository Structure
-
 ```
 immune_material_scRNA/
 │
@@ -55,51 +42,48 @@ immune_material_scRNA/
 ├── environment.yml
 └── README.md
 ```
----
 
 ## Key Results
+- Immune infiltration following biomaterial implantation is dominated by macrophages/monocytes, alongside fibroblasts and additional immune subsets
+- Macrophages exhibit pronounced functional heterogeneity, including:
+  - inflammatory states
+  - interferon-responsive programs
+  - antigen presentation signatures
+  - tissue remodeling–associated profiles
+- A subset of macrophage populations is enriched for pro-fibrotic transcriptional programs
+- Fibroblasts display diverse activation states, including:
+  - ECM-producing (fibrotic) programs
+  - TGF-β–responsive phenotypes
+- Ligand–receptor analysis identifies candidate macrophage–fibroblast signaling interactions associated with fibrotic remodeling
 
-- Macrophages and monocytes dominate the immune landscape following biomaterial implantation, alongside fibroblasts and other immune subsets.
-- Macrophages exhibit substantial functional heterogeneity, including inflammatory, interferon-associated, antigen presentation, and tissue remodeling–associated states.
-- A subset of macrophage states is enriched for pro-fibrotic–associated gene programs.
-- Fibroblasts display diverse activation programs, including ECM-high and TGF-β–responsive states consistent with fibrotic remodeling.
-- Ligand–receptor analysis identifies candidate macrophage–fibroblast signaling pathways associated with fibrotic fibroblast programs.
-
-All identified interactions are transcriptionally inferred and hypothesis-generating.
-
----
-
+  | All inferred interactions are transcriptional and hypothesis-generating.
+  
 ## Methods Summary
-
-- Single-cell analysis performed using **Scanpy**
-- Program scoring based on curated biologically motivated gene sets
-- Ligand–receptor analysis focused on known immune–stromal signaling axes
-- Visualization using Matplotlib and Scanpy plotting functions
-
-Details are provided in the notebooks and the accompanying mini-report.
-
----
+- Single-cell analysis performed using Scanpy
+- Gene program scoring based on curated, biologically relevant gene sets
+- Ligand–receptor analysis focused on known immune–stromal signaling pathways
+- Data visualization using Matplotlib and Scanpy plotting functions
+Detailed methodology is provided in the notebooks and accompanying report.
 
 ## Reproducibility
-
 To reproduce the analysis:
-
 ```bash
 conda env create -f environment.yml
 conda activate immune_material
 ```
-- Run notebooks sequentially from 01_qc_preprocessing.ipynb to 04_interaction_analysis.ipynb.
-
+Run notebooks sequentially:
+  1. 01_qc_preprocessing.ipynb
+  2. 02_celltype_annotation.ipynb
+  3. 03_macrophage_fibroblast_states.ipynb
+  4. 04_interaction_analysis.ipynb
 
 ## Limitations
-
-- Analysis is based on a single publicly available dataset
-- Transcriptional associations do not imply causality
+- Analysis is based on a single dataset
+- Transcriptional signatures do not establish causality
 - Ligand–receptor interactions are inferred and require experimental validation
 
 ## Author
-Chinonye Precious Anams
-
+**Chinonye Precious Anams**      
 MSc Cell Biology and Genetics
 
-Independent project (2026)
+Independent bioinformatics project (2026)
